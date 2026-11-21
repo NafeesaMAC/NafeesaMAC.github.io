@@ -7,7 +7,7 @@
   "pills": ["Product Manager", "Digital Health", "Partner Launches", "AI and Automation", "0-to-1 Products", "CSPO"],
 
   "hero": {
-    "headline": "I turn hours of manual clinical operations work into minutes.",
+    "headline": "Partner launches, 0-to-1 products and automation that give care teams their hours back.",
     "subline": "Product Manager at Twin Health. I have launched 44 partner programs, built products from 0-to-1 and shipped AI and automation that give care teams their time back."
   },
 
@@ -23,6 +23,54 @@
     "vendor-ecosystem": "Opened a gateway to about 34K potential leads and saved the care team about 2,880 minutes per member with a Salesforce referral ecosystem",
     "pre-enrolment-mobile-app": "Drove about 2% of enrollment with a pre-enrolment app built from 0-to-1",
     "us-partner-launches": "Launched 34 US partner programs and cut launch build and test time from about 1 week to 1 day with templates"
+  },
+
+  "caseFlows": {
+    "blood-draw-automation-agent": {
+      "title": "How the agent works",
+      "steps": [
+        {
+          "text": "A blood-draw report arrives as a PDF from a partner lab"
+        },
+        {
+          "text": "The AI agent reads the PDF and checks each parameter against Twin's standard parameters and units",
+          "tone": "agent"
+        },
+        {
+          "branches": [
+            {
+              "label": "Matches the standard",
+              "text": "Mapped directly"
+            },
+            {
+              "label": "Different unit",
+              "text": "The agent finds the lab's unit and converts the value to Twin's unit"
+            }
+          ]
+        },
+        {
+          "text": "Each value is checked against its reference range",
+          "tone": "agent"
+        },
+        {
+          "branches": [
+            {
+              "label": "Within range",
+              "text": "Investigation section updated, no flag"
+            },
+            {
+              "label": "Unusually low or high",
+              "text": "A task is created for the diagnostic team",
+              "tone": "alert"
+            }
+          ]
+        },
+        {
+          "text": "The team is informed. Report upload time: 20 minutes to 0",
+          "tone": "result"
+        }
+      ]
+    }
   },
 
   "cardSentences": {
@@ -47,6 +95,10 @@
       {
         "heading": "How I got here",
         "text": "I started in public health research (MPH, Occupational and Environmental Health) and ran a randomised trial of LPG subsidies published in World Development Perspectives. I moved through research program management and operations into product, so I understand clinical workflows, evidence and the people who use the tools. That adds up to 8+ years across product, operations and clinical research."
+      },
+      {
+        "heading": "Why product management",
+        "text": "Product management fits how I think. Curiosity leads me to the real problem, and I enjoy turning it into a solution people use. Feedback closes the loop: users get a better product, and I get sharper with every release. The impact of each solved problem is what keeps me looking for the next one."
       },
       {
         "heading": "What I am looking for",

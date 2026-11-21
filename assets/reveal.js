@@ -4,7 +4,16 @@
 // 2. On touch screens (no hover), the Work card in the middle of the screen is highlighted.
 // 3. In-page links (e.g. "See my work") show their target straight away, so they land exactly on it.
 // 4. Buttons and menu pills press in visibly when tapped on touch screens.
+// 5. The sticky header's height is measured so in-page links land just below it.
 (() => {
+  // Sticky header: keep --header-h equal to its real height, so in-page links land just below it.
+  const header = document.querySelector('.site-header');
+  if (header) {
+    const setHeight = () => document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+    setHeight();
+    if ('ResizeObserver' in window) new ResizeObserver(setHeight).observe(header);
+  }
+
   // Touch screens: show a visible press on buttons and menu pills. iOS only applies :active
   // when a touch listener exists; the class keeps the press visible briefly after the tap.
   document.addEventListener('touchstart', (event) => {
