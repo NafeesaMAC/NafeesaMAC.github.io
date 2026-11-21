@@ -5,13 +5,33 @@
 // 3. In-page links (e.g. "See my work") show their target straight away, so they land exactly on it.
 // 4. Buttons and menu pills press in visibly when tapped on touch screens.
 // 5. The sticky header's height is measured so in-page links land just below it.
+// 6. On phones the menu collapses behind a "Menu" button that expands it into a vertical list.
 (() => {
   // Sticky header: keep --header-h equal to its real height, so in-page links land just below it.
   const header = document.querySelector('.site-header');
+  const setHeight = () => header && document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
   if (header) {
-    const setHeight = () => document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
     setHeight();
     if ('ResizeObserver' in window) new ResizeObserver(setHeight).observe(header);
+  }
+
+  // Phones: the menu collapses behind a "Menu" button with an arrow. Without JavaScript the
+  // menu simply stays visible (the collapsing only starts once .nav-ready is added here).
+  const toggle = header && header.querySelector('.nav-toggle');
+  if (toggle) {
+    header.classList.add('nav-ready');
+    const setOpen = (open) => {
+      header.classList.toggle('nav-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      setHeight(); // update right away so in-page links land below the (now shorter) header
+    };
+    setOpen(false);
+    toggle.addEventListener('click', () => setOpen(!header.classList.contains('nav-open')));
+    header.querySelectorAll('nav a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && header.classList.contains('nav-open')) { setOpen(false); toggle.focus(); }
+    });
   }
 
   // Touch screens: show a visible press on buttons and menu pills. iOS only applies :active

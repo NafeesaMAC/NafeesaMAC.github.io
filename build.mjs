@@ -30,17 +30,25 @@ const { items, privateTexts, source, publicRows } = await loadItems({ sheetUrl, 
 // Building from the sheet or the private CSV refreshes the public snapshot (the fallback copy).
 if (source !== SNAPSHOT) await writeSnapshot(SNAPSHOT, publicRows);
 
-const featured = items.filter((i) => i.featured);
+const work = items.filter((i) => !i.side);
+const sideProjects = items.filter((i) => i.side);
+site.hasSideProjects = sideProjects.length > 0;
+
+const featured = work.filter((i) => i.featured);
 const homeFeatured = featured.slice(0, MAX_FEATURED);
 // Extra featured rows keep their case study and are listed under More wins instead.
-const wins = items.filter((i) => !homeFeatured.includes(i));
+const wins = work.filter((i) => !homeFeatured.includes(i));
+// Side projects: every shown one gets a card; Featured ones also get their own page.
+const sideFeatured = sideProjects.filter((i) => i.featured);
 
 const pages = new Map();
-pages.set('index.html', renderHome({ site, featured: homeFeatured, wins, dev, siteUrl }));
-featured.forEach((item, i) => {
-  const next = featured.length > 1 ? featured[(i + 1) % featured.length] : null;
-  pages.set(`work/${item.slug}/index.html`, renderCaseStudy({ site, item, next, dev }));
+pages.set('index.html', renderHome({ site, featured: homeFeatured, wins, sideProjects, dev, siteUrl }));
+const addPages = (list, folder, kind) => list.forEach((item, i) => {
+  const next = list.length > 1 ? list[(i + 1) % list.length] : null;
+  pages.set(`${folder}/${item.slug}/index.html`, renderCaseStudy({ site, item, next, dev, kind }));
 });
+addPages(featured, 'work', 'work');
+addPages(sideFeatured, 'projects', 'side');
 
 const problems = checkOutput(pages, { privateTexts, dev });
 if (problems.length) {
@@ -57,12 +65,12 @@ for (const [file, html] of pages) {
 await cp('assets', join(DIST, 'assets'), { recursive: true });
 await writeFile(join(DIST, 'robots.txt'), robotsTxt(siteUrl));
 if (siteUrl) {
-  const paths = ['', ...featured.map((i) => `work/${i.slug}/`)];
+  const paths = ['', ...featured.map((i) => `work/${i.slug}/`), ...sideFeatured.map((i) => `projects/${i.slug}/`)];
   await writeFile(join(DIST, 'sitemap.xml'), sitemapXml(siteUrl, paths, new Date().toISOString().slice(0, 10)));
 }
 
 console.log(`Built ${pages.size} pages from ${source}${dev ? ' (dev mode)' : ''}`);
-console.log(`  ${items.length} shown rows: ${featured.length} featured, ${wins.length} more wins`);
+console.log(`  ${items.length} shown rows: ${featured.length} featured, ${wins.length} more wins, ${sideProjects.length} side projects`);
 for (const file of pages.keys()) console.log(`  dist/${file}`);
 if (featured.length > MAX_FEATURED) {
   console.warn(`Warning: ${featured.length} rows are Featured; only the first ${MAX_FEATURED} appear as home cards.`);

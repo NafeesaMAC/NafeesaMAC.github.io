@@ -15,6 +15,7 @@ A clean, uncluttered portfolio website that leads with outcomes and impact, and 
 Columns: Project, Role, Period, Result, Problem, What I did, PM keywords, Numbers still to add, Impact type, Recruiter appeal (Top / Strong / Supporting), Why it attracts recruiters, Show on portfolio, Featured, Theme, Headline metric, Cover image link, Order.
 - Show only rows where Show on portfolio is TRUE.
 - Featured rows get a full case-study page (`dist/work/<slug>/index.html`). Other shown rows are one-line wins.
+- Side projects: rows with `Type` = "Side project" are kept apart from Work, in their own "Side projects" section and menu item (both appear only when at least one exists). Featured side projects get a page at `dist/projects/<slug>/` with the sections Idea, Problem, Proposal, User flow, Expected outcome, Success metrics, How I built it ("What I did"), Result, What I learned. Optional columns: Idea, Proposal, User flow, Expected outcome, Success metrics, Project link (https only), Card headline, Card sentence. In any section, lines starting "1." become a numbered list and lines starting "- " a bullet list.
 - Never output "Numbers still to add" or "Why it attracts recruiters" on the site. Those are private notes.
 - Sort by Order, then Recruiter appeal (Top first).
 
@@ -32,6 +33,7 @@ Columns: Project, Role, Period, Result, Problem, What I did, PM keywords, Number
   - In-page links scroll smoothly and land exactly on their heading, just below the sticky header (reveal.js measures the header height into --header-h).
 - Sticky header: a floating rounded bar that stays at the top while scrolling, semi-transparent cream with a frosted blur, 2px ink border and ink offset shadow. On phones it is compact and hides the job-title line.
 - CTA colour: every button and menu pill uses a left-to-right gradient from deep teal #063F3F through #0A5C5C to #1A7F7F (white text at least 4.8:1), darker on hover.
+- On phones (up to 640px) the header shows only the name and a "Menu" button with an arrow; tapping it expands the links into a vertical stack of full-width pills (arrow flips up), and tapping a link, the button again or Escape closes it. Without JavaScript the links stay visible. Tablets and desktop show the links in the bar.
 - On phones, the header and intro are compact so the pills, headline, summary and both buttons fit on the first screen without scrolling (checked at 375×667 and 390×844).
 - Category labels on cards are embossed pale-teal pill badges. The intro has pastel pills above the headline and the photo (`assets/photo.jpg`) in a tilted, layered frame on the right.
 - Do not add other animations without asking.
