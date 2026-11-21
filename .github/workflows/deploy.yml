@@ -30,7 +30,7 @@ jobs:
         env:
           SHEET_URL: ${{ secrets.SHEET_URL }}
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
