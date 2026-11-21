@@ -6,7 +6,8 @@
 var SHEET_NAME = 'Portfolio Data';
 var SHOW_COLUMN = 'Show on portfolio';
 var ORDER_COLUMN = 'Order';
-var PRIVATE_COLUMNS = ['Numbers still to add', 'Why it attracts recruiters', SHOW_COLUMN];
+// Private notes and internal ranking columns are never published.
+var PRIVATE_COLUMNS = ['Numbers still to add', 'Why it attracts recruiters', 'Recruiter appeal', 'Impact type', SHOW_COLUMN];
 
 function doGet() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME);

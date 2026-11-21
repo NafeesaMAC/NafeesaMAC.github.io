@@ -58,3 +58,10 @@ Case study: outcome headline → up to 3 metric tiles → Problem → What I did
 
 ## Working style
 Propose the plan before writing files. Build one section at a time, run it locally (`npm run dev` or `node build.mjs`) and show me what changed. Keep files small and readable.
+
+## Security and privacy
+- No phone number anywhere (site, resume PDF, repo, history). The build fails if a phone-like number, a private note, an `[ADD]` marker (published build) or an insecure `http://` link reaches the HTML.
+- Every page carries a Content-Security-Policy `<meta>` (only this site's files plus Google Fonts; no inline scripts, plugins, form posts or outside connections) and `referrer: strict-origin-when-cross-origin`. Keep scripts in files under `assets/`, never inline, and never add third-party scripts or trackers.
+- `data/portfolio.json` (committed, public) and the Apps Script feed contain only the columns the site uses. Private notes, the Show flag, Recruiter appeal and Impact type never leave the sheet or the gitignored CSV.
+- Images must have no EXIF/GPS metadata; check before adding any new photo.
+- Repo settings: secret scanning and push protection on, Dependabot alerts and security fixes on, `.github/dependabot.yml` keeps Actions current, workflow token read-only by default, HTTPS enforced on Pages. Secrets (SHEET_URL) live only in `.env` (gitignored) and GitHub Actions secrets.
