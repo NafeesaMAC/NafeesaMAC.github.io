@@ -50,11 +50,11 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
 /* Header */
 /* Sticky header: a floating, see-through bar with a frosted blur (like the reference site) */
-.site-header { position: sticky; top: 0; z-index: 50; padding: calc(0.45rem + env(safe-area-inset-top, 0px)) 0 0; }
+.site-header { position: sticky; top: 0; z-index: 50; padding: calc(0.6rem + env(safe-area-inset-top, 0px)) 0 0; }
 .site-header .wrap {
   display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: center;
-  padding: 0.3rem 0.4rem 0.3rem 1.25rem; border: 2px solid var(--ink); border-radius: 999px;
-  background: rgba(251, 247, 240, 0.94); box-shadow: 3px 3px 0 var(--ink);
+  padding: 0.6rem 0.75rem 0.6rem 1.5rem; border: 2px solid var(--ink); border-radius: 999px;
+  background: rgba(251, 247, 240, 0.94); box-shadow: 4px 4px 0 var(--ink);
 }
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .site-header .wrap {
@@ -63,14 +63,14 @@ a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
   }
 }
 .site-header + main { margin-top: -0.25rem; }
-.brand { font-weight: 700; font-size: 0.95rem; color: var(--ink); text-decoration: none; }
-.role { color: var(--muted); font-size: 0.82rem; }
-.site-header nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.brand { font-weight: 700; color: var(--ink); text-decoration: none; }
+.role { color: var(--muted); font-size: 0.95rem; }
+.site-header nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 0.6rem; }
 /* Menu links: embossed green pills, same family as the intro buttons (white on teal: 6.0:1 or more) */
 .site-header nav a {
-  display: inline-block; padding: 0.3rem 0.8rem; border: 2px solid var(--ink); border-radius: 999px;
+  display: inline-block; padding: 0.45rem 1rem; border: 2px solid var(--ink); border-radius: 999px;
   background: var(--cta); color: #fff;
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -2px 0 rgba(0, 0, 0, 0.15), 2px 2px 0 var(--ink);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
