@@ -40,7 +40,7 @@ function toHtml(md) {
     if (!t) { closeList(); continue; }
     let m;
     if ((m = t.match(/^# (.+)/))) { closeList(); out.push(`<h1>${inline(m[1])}</h1>`); afterName = 2; continue; }
-    if ((m = t.match(/^## (.+)/))) { closeList(); out.push(`<h2>${inline(m[1])}</h2>`); continue; }
+    if ((m = t.match(/^## (.+)/))) { closeList(); afterName = 0; out.push(`<h2>${inline(m[1])}</h2>`); continue; }
     if ((m = t.match(/^### (.+)/))) {
       closeList();
       const [role, dates] = m[1].split(' | ');
@@ -54,9 +54,9 @@ function toHtml(md) {
       continue;
     }
     closeList();
-    // The two lines under the name are the headline and the contact line.
+    // Under the name: the first line is the headline, the rest (until the first section) are contact lines.
     const cls = afterName === 2 ? 'headline' : afterName === 1 ? 'contact' : '';
-    afterName = Math.max(0, afterName - 1);
+    if (afterName === 2) afterName = 1;
     out.push(`<p${cls ? ` class="${cls}"` : ''}>${inline(t)}</p>`);
   }
   closeList();
@@ -70,7 +70,8 @@ body { margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 10pt; li
 a { color: inherit; text-decoration: none; }
 h1 { font-size: 20pt; margin: 0 0 2pt; letter-spacing: 0.2pt; }
 .headline { font-size: 11pt; font-weight: bold; color: #0A5C5C; margin: 0 0 3pt; }
-.contact { font-size: 9.5pt; margin: 0 0 6pt; }
+.contact { font-size: 9.5pt; margin: 0 0 1pt; }
+.contact + h2 { margin-top: 8pt; }
 h2 { font-size: 11pt; text-transform: uppercase; letter-spacing: 0.6pt; color: #0A5C5C;
      border-bottom: 1px solid #0A5C5C; padding-bottom: 1.5pt; margin: 9pt 0 4pt; break-after: avoid; }
 h3 { display: flex; justify-content: space-between; gap: 8pt; font-size: 10.5pt; margin: 7pt 0 2pt; break-after: avoid; }

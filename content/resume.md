@@ -1,6 +1,7 @@
 # Nafeesa Mohideen Abdul Cader
 Product Manager | Digital Health | Partner Launches, AI Automation
-Chennai, Tamil Nadu, India · nafeesamohideenabdulcader@gmail.com · https://www.linkedin.com/in/nafeesamac · https://nafeesamac.github.io
+Chennai, Tamil Nadu, India · nafeesamohideenabdulcader@gmail.com
+LinkedIn: https://www.linkedin.com/in/nafeesamac · Portfolio: https://nafeesamac.github.io
 
 ## Summary
 Product Manager in digital health who launched 44 partner programs, built several products from 0-to-1 (pre-enrolment mobile app, India website, partner-vendor referral ecosystem) and grew top-of-funnel leads 20% at Twin Health. Cut manual operations work from hours to minutes through workflow automation and an AI agent. 8+ years across product, operations and clinical research, 2+ of them owning the product roadmap. Strengths: product strategy, go-to-market strategy, stakeholder management, cross-functional leadership and product analytics.
