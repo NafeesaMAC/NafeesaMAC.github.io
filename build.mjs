@@ -27,8 +27,8 @@ if (!siteUrl) console.warn('Warning: site URL not set yet (content/site.json "si
 site.url = siteUrl;
 const SNAPSHOT = 'data/portfolio.json';
 const { items, privateTexts, source, publicRows } = await loadItems({ sheetUrl, csvPath: 'data/brag-book.csv', snapshotPath: SNAPSHOT });
-// Building from the private CSV refreshes the public snapshot that GitHub builds from.
-if (source.endsWith('.csv')) await writeSnapshot(SNAPSHOT, publicRows);
+// Building from the sheet or the private CSV refreshes the public snapshot (the fallback copy).
+if (source !== SNAPSHOT) await writeSnapshot(SNAPSHOT, publicRows);
 
 const featured = items.filter((i) => i.featured);
 const homeFeatured = featured.slice(0, MAX_FEATURED);

@@ -22,7 +22,8 @@ function doGet() {
   }
 
   var rows = values
-    .filter(function (row) { return row[showIndex] === true; })
+    // Works whether the column is a checkbox or the text TRUE.
+    .filter(function (row) { return row[showIndex] === true || String(row[showIndex]).trim().toUpperCase() === 'TRUE'; })
     .map(function (row) {
       var item = {};
       headers.forEach(function (header, i) {

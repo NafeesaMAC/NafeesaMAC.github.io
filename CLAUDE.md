@@ -5,7 +5,8 @@ A clean, uncluttered portfolio website that leads with outcomes and impact, and 
 
 ## How this project works
 - Static site. `build.mjs` fetches JSON from `process.env.SHEET_URL` (a Google Apps Script web app) and writes plain HTML and CSS into `dist/`.
-- If `SHEET_URL` is not set, read `data/brag-book.csv` instead so I can develop offline.
+- If `SHEET_URL` is not set, read `data/brag-book.csv` instead so I can develop offline; if neither is available (or the sheet is unreachable), fall back to the committed public snapshot `data/portfolio.json`. Every build from the sheet or CSV refreshes that snapshot.
+- The Google Sheet is connected (Nov 2026): the Apps Script web app (`apps-script/Code.gs`, deployment "Portfolio feed v1") is stored as `SHEET_URL` in `.env` and in the GitHub Actions secret. Sheet edits reach the live site on the daily run (02:30 UTC) or when the workflow is run manually from the repo's Actions tab.
 - Hosted on GitHub Pages, deployed by `.github/workflows/deploy.yml` (on push, daily, and manually).
 - No framework unless I ask. No client-side fetching of the sheet: all content must be in the generated HTML so crawlers can read it.
 - Never commit `.env`. The sheet URL lives in `.env` locally and in the GitHub Actions secret `SHEET_URL`.
