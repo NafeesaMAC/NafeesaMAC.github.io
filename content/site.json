@@ -1,0 +1,103 @@
+{
+  "siteUrl": "https://nafeesamac.github.io",
+  "titleTagline": "Product Manager, Digital Health | Partner Launches, AI Automation",
+  "description": "Product Manager in digital health. Launched 44 partner programs, built 0-to-1 products and shipped AI agents and workflow automation for care teams.",
+  "employer": "Twin Health",
+
+  "pills": ["Product Manager", "Digital Health", "Partner Launches", "AI and Automation", "0-to-1 Products", "CSPO"],
+
+  "hero": {
+    "headline": "I turn hours of manual clinical operations work into minutes.",
+    "subline": "Product Manager at Twin Health. I have launched 44 partner programs, built products from 0-to-1 and shipped AI and automation that give care teams their time back."
+  },
+
+  "stats": [
+    { "value": "44", "label": "partner programs launched, 34 in the US and 10 in India" },
+    { "value": "24–48\u00a0h → 30\u00a0min", "spoken": "24 to 48 hours down to 30 minutes", "label": "to reach a member with high symptoms, with automated incident alerts" },
+    { "value": "+20%", "label": "top-of-funnel leads from condition-specific landing pages" },
+    { "value": "12\u00a0h → 5\u00a0min", "spoken": "12 hours down to 5 minutes", "label": "per task, with a rule-based commitment tracker for blood draws and sensor orders" }
+  ],
+
+  "cardHeadlines": {
+    "blood-draw-automation-agent": "Cut report upload from 20 minutes to zero with an AI agent, saving about Rs. 75K a month in vendor fees",
+    "vendor-ecosystem": "Opened a gateway to about 34K potential leads and saved the care team about 2,880 minutes per member with a Salesforce referral ecosystem",
+    "pre-enrolment-mobile-app": "Drove about 2% of enrollment with a pre-enrolment app built from 0-to-1",
+    "us-partner-launches": "Launched 34 US partner programs and cut launch build and test time from about 1 week to 1 day with templates"
+  },
+
+  "cardSentences": {
+    "vendor-ecosystem": "I conceptualised, designed and implemented the partner-vendor referral information on the Salesforce account record, so everything sits in one place."
+  },
+
+  "about": {
+    "eyebrow": "Get to know me",
+    "whoIAm": [
+      {
+        "heading": "",
+        "text": "I am a Product Manager in digital health at Twin Health. I build products that turn hours of manual clinical operations work into minutes, using workflow automation and an AI agent."
+      },
+      {
+        "heading": "What I own",
+        "text": "I own the product roadmap for partner launches, growth and care-team tools. I have led 44 partner launches (34 in the US, 10 in India), taken a pre-enrolment mobile app, the India website and a partner-vendor referral ecosystem from 0-to-1, and grown top-of-funnel leads 20% with condition-specific landing pages."
+      },
+      {
+        "heading": "How I work",
+        "text": "Partner launches are where product strategy, go-to-market strategy and stakeholder management meet. Each one needs requirements across the landing page, Salesforce, the clinical app and the member app, and cross-functional leadership with the sales, onboarding, diagnostics, inventory and care teams who use them. I use product analytics in Mixpanel to measure what we ship."
+      },
+      {
+        "heading": "How I got here",
+        "text": "I started in public health research (MPH, Occupational and Environmental Health) and ran a randomised trial of LPG subsidies published in World Development Perspectives. I moved through research program management and operations into product, so I understand clinical workflows, evidence and the people who use the tools. That adds up to 8+ years across product, operations and clinical research."
+      },
+      {
+        "heading": "What I am looking for",
+        "text": "I am open to conversations about Product Manager roles in digital health and healthcare technology."
+      }
+    ],
+    "bestAt": [
+      {
+        "title": "Partner launches",
+        "text": "End-to-end product requirements across landing pages, Salesforce, the clinical app and the member app, with API integrations and real-time coverage verification across payers."
+      },
+      {
+        "title": "AI and workflow automation",
+        "text": "An AI agent that reads blood-draw PDFs and uploads the report, rule-based agents for member adherence and commitment tracking, automated account creation from Salesforce, and incident alerts that cut response time from 24–48 hours to 30 minutes."
+      },
+      {
+        "title": "Operational products",
+        "text": "Dashboards and work queues that cut onboarding time per member from 45–50 to 22–30 minutes."
+      },
+      {
+        "title": "0-to-1 products",
+        "text": "A pre-enrolment mobile app, the India website and a partner-vendor referral ecosystem, each taken from 0-to-1."
+      }
+    ]
+  },
+
+  "skillsIntro": "I work across the product lifecycle, from product discovery and the product roadmap to product launch, and I measure adoption, conversion and retention with product analytics.",
+  "skills": [
+    { "group": "Product", "items": ["Product Strategy", "Product Roadmap", "Product Lifecycle", "Product Discovery", "Prioritization", "Backlog Management", "User Stories", "Product Requirements Document (PRD)", "MVP", "Product Launch", "Go-to-Market Strategy"] },
+    { "group": "Data and growth", "items": ["Product Analytics", "Mixpanel", "Funnel Optimization", "Conversion Rate", "Retention", "Engagement", "Adoption", "Experimentation", "KPIs", "Dashboards", "Revenue Growth"] },
+    { "group": "Delivery and leadership", "items": ["Cross-Functional Leadership", "Stakeholder Management", "Agile", "Sprint Planning", "Requirements Gathering", "Product Operations", "Risk Management"] },
+    { "group": "Technical and platform", "items": ["APIs", "Integrations", "Salesforce", "CRM", "CleverTap", "Mobile", "Automation", "AI Agents", "Workflow Automation"] },
+    { "group": "Domain", "items": ["Digital Health", "Healthcare", "Chronic Condition Care", "B2B", "Partner Launches", "Compliance"] },
+    { "group": "Tools", "items": ["Salesforce", "Mixpanel", "CleverTap", "REDCap", "Jira"] }
+  ],
+
+  "certifications": [
+    { "name": "Certified Scrum Product Owner (CSPO)", "issuer": "Scrum Alliance", "date": "Feb 2026", "credentialId": "001812183" },
+    { "name": "Artificial Intelligence Micro-Certification" },
+    { "name": "Product-Led Growth Micro-Certification" },
+    { "name": "Health Research Fundamentals" },
+    { "name": "Ethics of Human Research" }
+  ],
+
+  "education": [
+    { "degree": "Master of Public Health, Occupational and Environmental Health", "school": "Sri Ramachandra Institute of Higher Education and Research", "years": "2013–2015" },
+    { "degree": "Bachelor of Science, Radiology and Imaging Sciences", "school": "Sri Ramachandra Institute of Higher Education and Research", "years": "2009–2013" }
+  ],
+
+  "publications": [
+    { "title": "A Randomized Trial of Price Subsidies for Liquefied Petroleum Cooking Gas among Low-Income Households in Rural India", "venue": "World Development Perspectives", "date": "Jun 2023" },
+    { "title": "Perceived Work-Related Psychosocial Stress and Musculoskeletal Disorders among Call Centre Workers in India", "venue": "SciMedCentral", "date": "Sep 2017" }
+  ]
+}

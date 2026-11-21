@@ -1,0 +1,15 @@
+{
+  "name": "nafeesa-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Static portfolio built from the Brag Book",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node scripts/dev.mjs",
+    "resume": "node scripts/resume.mjs"
+  }
+}

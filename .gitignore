@@ -1,0 +1,10 @@
+.env
+node_modules/
+dist/
+.DS_Store
+
+# Brag Book export has private columns
+data/*.csv
+
+# Local editor/assistant settings
+.claude/settings.local.json
